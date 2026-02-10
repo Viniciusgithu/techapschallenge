@@ -1,0 +1,24 @@
+import cors from "cors";
+import "dotenv/config";
+import express from "express";
+import errorHandler from "./middlewares/errorHandler";
+import clientesRouter from "./routes/clientes";
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+app.use(cors());
+app.use(express.json());
+
+app.use("/api/clientes", clientesRouter);
+
+app.get("/health", (_req, res) => {
+  res.json({ status: "ok" });
+});
+
+// Centralized error handling middleware (must be after routes)
+app.use(errorHandler);
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
