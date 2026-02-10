@@ -17,8 +17,8 @@ Aplicação full-stack para cadastro e gerenciamento de clientes (CRUD), desenvo
 ### 1. Clonar o repositório
 
 ```bash
-git clone <URL_DO_SEU_REPOSITORIO>
-cd AppDesafio
+git clone https://github.com/Viniciusgithu/techapschallenge.git
+cd techapschallenge
 ```
 
 ### 2. Instalar dependências
